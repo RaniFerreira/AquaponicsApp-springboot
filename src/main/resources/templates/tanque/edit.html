@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Editar Tanque</title>
+
+<link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+/>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .card {
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    padding: 25px;
+    background: #ffffff;
+  }
+
+  .btn-primary {
+    width: 100%;
+    font-weight: bold;
+    background-color: #2a5298;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #1e3c72;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Editar Tanque</h1>
+
+    <div class="card">
+        <form th:action="@{/tanque/save}" th:object="${tanque}" method="POST">
+
+            <!-- ID escondido (IMPORTANTE para editar) -->
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" th:field="*{nome}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea th:field="*{descricao}" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Tamanho dos Peixes (cm)</label>
+                <input type="number" step="0.01" th:field="*{tamanhoPeixes}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Quantidade de Peixes</label>
+                <input type="number" th:field="*{quantidadePeixes}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Espécie</label>
+                <input type="text" th:field="*{especie}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Peso médio (kg)</label>
+                <input type="number" step="0.01" th:field="*{peso}" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Atualizar Tanque
+            </button>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -74,6 +74,7 @@
               <th>Espécie</th>
               <th>Peso médio</th>
               <th scope="col">Excluir</th>
+              <th scope="col">Editar</th>
             </tr>
           </thead>
           <tbody>
@@ -88,7 +89,10 @@
               <td th:text="${tanque.peso}"></td>
               <td>
               <a th:href="@{/tanque/delete/{id}(id=${tanque.id})}">Deletar</a>
-            </td>
+             </td>
+             <td>
+              <a th:href="@{/tanque/edit/{id}(id=${tanque.id})}">Editar</a>
+             </td>
             </tr>
           </tbody>
         </table>

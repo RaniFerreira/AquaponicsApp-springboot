@@ -41,4 +41,11 @@ public class TanqueController {
         this.TanqueService.deleteTanqueById(id);
         return "redirect:/tanque";
     }
+
+    @GetMapping("/tanque/edit/{id}")
+    public String edit(@PathVariable Long id, Model model) {
+        Tanque tanque = TanqueService.getTanqueById(id);
+        model.addAttribute("tanque", tanque);
+        return "tanque/edit";
+    }
 }
