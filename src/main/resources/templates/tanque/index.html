@@ -73,6 +73,7 @@
               <th>Quantidade</th>
               <th>Espécie</th>
               <th>Peso médio</th>
+              <th scope="col">Excluir</th>
             </tr>
           </thead>
           <tbody>
@@ -85,6 +86,9 @@
                 <span class="badge-especie" th:text="${tanque.especie}"></span>
               </td>
               <td th:text="${tanque.peso}"></td>
+              <td>
+              <a th:href="@{/tanque/delete/{id}(id=${tanque.id})}">Deletar</a>
+            </td>
             </tr>
           </tbody>
         </table>
