@@ -46,10 +46,21 @@
         border-radius: 20px;
         font-size: 13px;
       }
+      .btn-primary {
+        background-color: #2a5298;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #1e3c72;
+      }
+
+      
     </style>
   </head>
   <body>
     <div class="container">
+      <a th:href="@{/tanque/create}" class="btn btn-primary mb-3">Cadastrar Tanque</a>
       <h1>Listagem de Tanques</h1>
 
       <div class="card">

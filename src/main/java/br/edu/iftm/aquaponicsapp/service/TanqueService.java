@@ -7,7 +7,7 @@ import br.edu.iftm.aquaponicsapp.model.Tanque;
 public interface TanqueService {
 
     List <Tanque> getAllTanque();
-    void saveTanque(Tanque taqnue);
+    void saveTanque(Tanque tanque);
     Tanque getTanqueById(long id);
     void deleteTanqueById(long id);
 }
