@@ -51,31 +51,37 @@
             <div class="form-group">
                 <label>Nome</label>
                 <input type="text" th:field="*{nome}" class="form-control" placeholder="Nome do tanque">
+                <p th:if="${#fields.hasErrors('nome')}" class="text-danger" th:errors="*{nome}"></p>
             </div>
 
             <div class="form-group">
                 <label>Descrição</label>
                 <textarea th:field="*{descricao}" class="form-control"></textarea>
+                <p th:if="${#fields.hasErrors('descricao')}" class="text-danger" th:errors="*{descricao}"></p>
             </div>
 
             <div class="form-group">
                 <label>Tamanho dos Peixes (cm)</label>
                 <input type="number" step="0.01" th:field="*{tamanhoPeixes}" class="form-control">
+                <p th:if="${#fields.hasErrors('tamanhoPeixes')}" class="text-danger" th:errors="*{tamanhoPeixes}"></p>
             </div>
 
             <div class="form-group">
                 <label>Quantidade de Peixes</label>
                 <input type="number" th:field="*{quantidadePeixes}" class="form-control">
+                <p th:if="${#fields.hasErrors('quantidadePeixes')}" class="text-danger" th:errors="*{quantidadePeixes}"></p>
             </div>
 
             <div class="form-group">
                 <label>Espécie</label>
                 <input type="text" th:field="*{especie}" class="form-control">
+                <p th:if="${#fields.hasErrors('especie')}" class="text-danger" th:errors="*{especie}"></p>
             </div>
 
             <div class="form-group">
                 <label>Peso médio (kg)</label>
                 <input type="number" step="0.01" th:field="*{peso}" class="form-control">
+                <p th:if="${#fields.hasErrors('peso')}" class="text-danger" th:errors="*{peso}"></p>
             </div>
 
             <button type="submit" class="btn btn-primary">

@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.validation.BindingResult;
 
 import br.edu.iftm.aquaponicsapp.service.TanqueService;
 import br.edu.iftm.aquaponicsapp.model.Tanque;
+import jakarta.validation.Valid;
 
 @Controller
 public class TanqueController {
@@ -31,7 +33,13 @@ public class TanqueController {
     }
 
     @PostMapping("/tanque/save")
-    public String postMethodName(@ModelAttribute("tanque") Tanque tanque) {
+    public String save(@ModelAttribute @Valid Tanque tanque, BindingResult result, Model model) {
+        System.out.println(result.getAllErrors());
+        if (result.hasErrors()) {
+            model.addAttribute("tanque", tanque);
+            return "tanque/create";
+        }
+
         TanqueService.saveTanque(tanque);
         return "redirect:/tanque";
     }
