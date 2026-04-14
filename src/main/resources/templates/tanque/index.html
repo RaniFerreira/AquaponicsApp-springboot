@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-  <th:block
-    th:replace="~{/../fragments/head :: head('Listar Tanque')}"
-  ></th:block>
-  <head>
-    <link rel="stylesheet" th:href="@{/css/indexStyle.css}" />
-</head>
 
-  <body>
-     <th:block th:replace="~{/../fragments/head :: header}"></th:block>
-    <div class="container">
+<th:block th:replace="fragments/head :: head('Listar Tanque')"></th:block>
 
-      <h1>Listagem de Tanques</h1>
+<body>
+
+<th:block th:replace="fragments/head :: header"></th:block>
+
+<link rel="stylesheet" th:href="@{/css/indexStyle.css}" />
+
+<div class="container">
+    <h1>Listagem de Tanque</h1>
 
       <div class="card">
         <table class="table table-striped">

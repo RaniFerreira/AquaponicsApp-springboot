@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -43,7 +44,8 @@ public class Tanque {
     @Column(nullable = false)
     private String especie;
 
-    
+    @NotNull(message = "Informe o peso médio")
+    @DecimalMin(value = "0.1", message = "O peso deve ser maior que 0")
     @Column(nullable = false)
     private Double peso;
 

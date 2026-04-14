@@ -37,7 +37,11 @@ public class TanqueController {
         System.out.println(result.getAllErrors());
         if (result.hasErrors()) {
             model.addAttribute("tanque", tanque);
-            return "tanque/create";
+          
+        if (tanque.getId() != null) {
+            return "tanque/edit";
+        }
+        return "tanque/create";
         }
 
         TanqueService.saveTanque(tanque);
