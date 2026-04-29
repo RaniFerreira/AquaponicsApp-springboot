@@ -52,7 +52,7 @@
        
         <div class="row mt-3">
           <a th:href="@{/tanque/create}">
-            <button class="btn btn-primary">Cadastrar Tanque</button>
+            <button sec:authorize="hasAuthority('Admin')" class="btn btn-primary">Cadastrar Tanque</button>
           </a>
         </div>
 
